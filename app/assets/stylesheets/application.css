@@ -49,17 +49,17 @@ body, html {
 .hero--title {
     align-self: end;
     position: relative;
-    bottom: -7%; /* Move the title down a bit */
+    bottom: -5%; /* Move the title down a bit */
 }
 
 .hero--text {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     color: white;
-    font-size: 25rem;
+    font-size: 24rem;
     font-weight: 400;
     position: relative;
-    line-height: 24rem;
+    line-height: 20rem;
 }
 
 .hero--text.top {
@@ -67,10 +67,20 @@ body, html {
 }
 
 .hero--text.bottom {
-    inset: auto auto 0% 30%; /* Move the text to the right */
+    inset: auto auto 0% 15%; /* Move the text to the right */
+    z-index: 2;
 }
 
 .text {
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+.card {
+    margin: 150px 300px;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
 }
