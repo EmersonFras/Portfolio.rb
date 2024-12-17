@@ -14,6 +14,24 @@
  *= require_self
  */
 
+ @keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%) translateY(0); /* Start off-screen from the left */
+    }
+    100% {
+        transform: translateX(0) translateY(0); /* End at original position */
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%) translateY(0); /* Start off-screen from the left */
+    }
+    100% {
+        transform: translateX(0%) translateY(0); /* End at original position */
+    }
+}
+
 html {
     overflow-x: hidden;
 }
@@ -35,40 +53,37 @@ body, html {
 .hero {
     height: 100vh; /* 100% of the viewport height */
     background-color: #e7e7e7; /* Light grey */
-    display: flex;
+    position: relative;
 }
+
 
 .hero--picture {
     height: 85vh;
     width: auto;
-    align-self: end;
-    position: absolute;
-    z-index: 1; /* Make sure the picture is in front of the text */
+    bottom: 0;
+    position: absolute; 
 }
 
-.hero--title {
-    align-self: end;
-    position: relative;
-    bottom: -5%; /* Move the title down a bit */
-}
 
-.hero--text {
+#hero--text {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0;
-    color: white;
-    font-size: 24rem;
-    font-weight: 400;
-    position: relative;
-    line-height: 20rem;
+    font-size: 400px;
+    fill: white;
 }
 
-.hero--text.top {
-    inset: auto auto 0% 20%; /* Move the text to the right */
+.hero-text-top {
+    animation: slideInFromLeft 1s ease-out forwards;
 }
 
-.hero--text.bottom {
-    inset: auto auto 0% 15%; /* Move the text to the right */
-    z-index: 2;
+.hero-text-bottom {
+    animation: slideInFromRight 1s ease-out forwards; /* Delay for bottom text */
+}
+
+
+#hero--text text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 400px;
+    fill: white;
 }
 
 .text {
